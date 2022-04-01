@@ -86,6 +86,7 @@ class ApplicationController < Sinatra::Base
     employee.update(
       first_name: params[:form_data][:firstName], 
       last_name: params[:form_data][:lastName],
+      picture: params[:form_data][:picture],
       company_id: params[:form_data][:companyId].to_i
     )
     employee.to_json
@@ -97,6 +98,7 @@ class ApplicationController < Sinatra::Base
     employee.update(
       first_name: params[:form_data][:firstName], 
       last_name: params[:form_data][:lastName],
+      picture: params[:form_data][:picture],
       company_id: Company.all.last.id
     )
     employee.to_json
