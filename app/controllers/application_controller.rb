@@ -148,8 +148,8 @@ class ApplicationController < Sinatra::Base
     note.to_json
   end
 
-  get '/notes' do
-    notes = Note.all
+  get '/notes/:id' do
+    notes = Note.all.where("task_id=?", params[:id])
     notes.to_json
   end
 end
